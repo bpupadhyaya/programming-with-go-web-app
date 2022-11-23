@@ -1,2 +1,2 @@
 # programming-with-go-web-app
-Go Web Applications
+Go Web Applications Programming
