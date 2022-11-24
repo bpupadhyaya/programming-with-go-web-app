@@ -20,7 +20,7 @@ func greet(respWriter http.ResponseWriter, req *http.Request) {
 
 func main() {
 	http.HandleFunc("/", greet)
-	err := http.ListenAndServe(":9090", nil)
+	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
 		log.Fatal("Error from ListenAndServe: ", err)
 	}
