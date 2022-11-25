@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
+	"html/template"
 	"log"
 	"net/http"
-	"html/template"
 )
 
 func greet(respWriter http.ResponseWriter, req *http.Request) {
@@ -21,17 +21,16 @@ func greet(respWriter http.ResponseWriter, req *http.Request) {
 	fmt.Fprintf(respWriter, "Message from the server")
 }
 
-
 func login(respWriter http.ResponseWriter, req *http.Request) {
-    fmt.Println("method: ", req.Method)
-    if req.Method == "GET" {
-        t, _ := template.ParseFiles("resources/login.gtpl")
-        t.Execute(respWriter, nil)
-    } else {
-        req.ParseForm()
-        fmt.Println("username: ", req.Form["username"])
-        fmt.Println("password: ", req.Form["password"])
-    }
+	fmt.Println("method: ", req.Method)
+	if req.Method == "GET" {
+		t, _ := template.ParseFiles("resources/login.gtpl")
+		t.Execute(respWriter, nil)
+	} else {
+		req.ParseForm()
+		fmt.Println("username: ", req.Form["username"])
+		fmt.Println("password: ", req.Form["password"])
+	}
 }
 
 func main() {
