@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"strings"
 )
 
 func greet(respWriter http.ResponseWriter, req *http.Request) {
